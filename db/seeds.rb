@@ -12,24 +12,24 @@ categories = Category.create!([
 ])
 
 tests = Test.create!([
-  { title: 'HTML', level: 1, category_id: categories.first.id },
-  { title: 'Git', level: 1, category_id: categories.first.id },
-  { title: 'Ruby', level: 3, category_id: categories.first.id }
+  { title: 'HTML', level: 1, category: categories.first },
+  { title: 'Git', level: 1, category: categories.first },
+  { title: 'Ruby', level: 3, category: categories.first }
 ])
 
 questions = Question.create!([
-  { body: 'Если вы хотите отобразить поле для ввода чисел в заданном диапазоне, используйте тип:', test_id: tests[0].id },
-  { body: 'Для чего нужна команда git log?', test_id: tests[1].id },
-  { body: 'Необходимо ли слово return для возврата метода значения', test_id: tests[2].id }
+  { body: 'Если вы хотите отобразить поле для ввода чисел в заданном диапазоне, используйте тип:', test: tests[0] },
+  { body: 'Для чего нужна команда git log?', test: tests[1] },
+  { body: 'Необходимо ли слово return для возврата метода значения', test: tests[2] }
 ])
 
 Answer.create!([
-  { body: "number", correct: true, question_id: questions[0].id },
-  { body: "range", correct: false, question_id: questions[0].id },
-  { body: "Просмотр веток", correct: false, question_id: questions[1].id },
-  { body: "Просмотр коммитов", correct: true, question_id: questions[1].id },
-  { body: "Нет", correct: true, question_id: questions[2].id },
-  { body: "Да", correct: false, question_id: questions[2].id }
+  { body: "number", correct: true, question: questions[0] },
+  { body: "range", correct: false, question: questions[0] },
+  { body: "Просмотр веток", correct: false, question: questions[1] },
+  { body: "Просмотр коммитов", correct: true, question: questions[1] },
+  { body: "Нет", correct: true, question: questions[2] },
+  { body: "Да", correct: false, question: questions[2] }
 ])
 
 users = User.create!([
@@ -40,8 +40,4 @@ users = User.create!([
 results = Result.create!([
   { user_id: users[0].id, test_id: tests[2].id },
   { user_id: users[1].id, test_id: tests[1].id }
-])
-
-Author.create!([
-  { user_id: users[1].id, test_id: tests[2].id }
 ])
