@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181224094335) do
+ActiveRecord::Schema.define(version: 20190111125751) do
 
   create_table "answers", force: :cascade do |t|
     t.string   "body",                        null: false
@@ -21,10 +21,28 @@ ActiveRecord::Schema.define(version: 20181224094335) do
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
+  create_table "authors", force: :cascade do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "test_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["test_id"], name: "index_authors_on_test_id"
+    t.index ["user_id"], name: "index_authors_on_user_id"
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string   "title",      null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "links", force: :cascade do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "test_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["test_id"], name: "index_links_on_test_id"
+    t.index ["user_id"], name: "index_links_on_user_id"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -33,6 +51,15 @@ ActiveRecord::Schema.define(version: 20181224094335) do
     t.datetime "updated_at", null: false
     t.integer  "test_id"
     t.index ["test_id"], name: "index_questions_on_test_id"
+  end
+
+  create_table "results", force: :cascade do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "test_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["test_id"], name: "index_results_on_test_id"
+    t.index ["user_id"], name: "index_results_on_user_id"
   end
 
   create_table "tests", force: :cascade do |t|
