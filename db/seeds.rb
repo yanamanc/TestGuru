@@ -43,5 +43,5 @@ users = User.create!([
 ])
 
 test_passages = TestPassage.create!([
-  { user_id: users.first.id, test_id: tests.first.id, current_questions_id: questions.first.id }
+  { user_id: users.first.id, test_id: tests.first.id, current_question_id: questions.first.id }
 ])
