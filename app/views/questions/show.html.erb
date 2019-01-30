@@ -1,0 +1,9 @@
+<p><%= @question.body %></p>
+Answers:<br>
+<% @question.answers.each.with_index(1) do |answer, index| %>
+  <%= index %></strong>
+  <%= answer.body %>
+  <br>
+<% end %>
+
+<%= link_to 'Back', test_path(@question.test) %>

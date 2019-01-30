@@ -33,8 +33,8 @@ Answer.create!([
 ])
 
 users = User.create!([
-  { name: 'Yana', admin: false},
-  { name: 'Dima', admin: false }
+  { name: 'Yana', admin: false, email: 'yaninamancevich@mail.ru'},
+  { name: 'Dima', admin: false, email: 'moiseenko@gmail.ru' }
 ])
 
 results = Result.create!([
