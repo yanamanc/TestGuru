@@ -9,8 +9,12 @@
   </head>
 
   <body>
-    <%= yield %>
+    <% if logged_in? %>
+      <p class = "nav user">Welcome, <b><%= current_user.email %></b> Guru</p>
+    <% end %>
   </body>
+
+  <%= yield %>
 
   <%= render 'layouts/footer' %>
 </html>
