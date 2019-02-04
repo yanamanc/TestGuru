@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190130202126) do
+ActiveRecord::Schema.define(version: 20190204211559) do
 
   create_table "answers", force: :cascade do |t|
     t.string "body", null: false
-    t.boolean "correct", default: false, null: false
+    t.boolean "correct"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "question_id"
@@ -60,8 +60,8 @@ ActiveRecord::Schema.define(version: 20190130202126) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name", null: false
-    t.boolean "admin", null: false
+    t.string "name", default: ""
+    t.boolean "admin", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "test_id"
