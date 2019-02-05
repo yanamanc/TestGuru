@@ -8,8 +8,7 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages, dependent: :destroy
   has_many :authors_tests, class_name: "Test"
 
-  validates :email, presence: true
-  validates :email, format: CORRECT_EMAIL_FORMAT, uniqueness: true
+  validates :email, format: CORRECT_EMAIL_FORMAT, uniqueness: true, presence: true
 
   has_secure_password
 

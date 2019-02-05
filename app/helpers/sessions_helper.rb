@@ -1,9 +1,7 @@
 module SessionsHelper
 
-  def message
-    if flash[:alert]
-      content_tag :p, flash[:alert], class: "flash alert"
-    end
+  def message(key)
+    content_tag(:p, flash[key], class: "flash #{key}") if flash[key].present?
   end
   
 end
