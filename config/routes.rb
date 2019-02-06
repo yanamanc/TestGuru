@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'tests#index'
   get :login, to: 'sessions#new'
   get :signup,to: 'users#new'
-  get :logout, to: 'sessions#delete'
+  delete 'logout', to: 'sessions#destroy'
   
   resources :users, only: :create
   resources :sessions, only: :create
