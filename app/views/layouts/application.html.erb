@@ -9,14 +9,15 @@
   </head>
 
   <body>
-    <% if logged_in? %>
-      <p class = "nav user">Welcome, <b><%= current_user.email %></b>
+    <% if user_signed_in? %>
+      <p class = "nav user">
+      Welcome, <b><%= current_user.email %></b>
       <%= link_to 'Guru', root_path %>
-      <%= link_to 'Exit', logout_path, method: :delete %></p>
+      <%= link_to 'Exit', destroy_user_session_path, method: :delete %></p>
     <% end %>
-  </body>
 
   <%= yield %>
 
   <%= render 'layouts/footer' %>
+  </body>
 </html>
