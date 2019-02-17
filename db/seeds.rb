@@ -36,12 +36,3 @@ Answer.create!([
   { body: "Нет", correct: true, question: questions[3] },
   { body: "Да", correct: false, question: questions[3] }
 ])
-
-users = User.create!([
-  { name: 'Yana', admin: false, email: 'yaninamancevich@mail.ru'},
-  { name: 'Dima', admin: false, email: 'moiseenko@gmail.ru' }
-])
-
-test_passages = TestPassage.create!([
-  { user_id: users.first.id, test_id: tests.first.id, current_question_id: questions.first.id }
-])
