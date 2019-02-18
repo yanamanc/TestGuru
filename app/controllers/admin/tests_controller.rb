@@ -1,6 +1,5 @@
 class Admin::TestsController < ApplicationController
 
-  before_action :authenticate_user!
   before_action :find_test, only: %i[start destroy show edit update]
   
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
@@ -19,7 +18,7 @@ class Admin::TestsController < ApplicationController
 
   def update
     if @test.update(test_params)
-      redirect_to @test
+      redirect_to admin_tetst_path
     else
       render :edit
     end
@@ -27,8 +26,9 @@ class Admin::TestsController < ApplicationController
 
   def create
     @test = Test.new(test_params)
+    @test.author_id = current_user.id
     if @test.save
-      redirect_to @test
+      redirect_to admin_tests_path
     else
       render :new
     end
@@ -36,7 +36,7 @@ class Admin::TestsController < ApplicationController
 
   def destroy
     @test.destroy
-    redirect_to tests_path
+    redirect_to admin_tests_path
   end
 
   def start
