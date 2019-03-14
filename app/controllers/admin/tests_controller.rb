@@ -8,13 +8,9 @@ class Admin::TestsController < ApplicationController
     @tests = Test.all
   end
 
-  def show; end
-
   def new
     @test = Test.new
   end
-
-  def edit; end
 
   def update
     if @test.update(test_params)
@@ -51,7 +47,7 @@ class Admin::TestsController < ApplicationController
   end
 
   def test_params
-    params.require(:test).permit(:title, :level, :category_id, :author_id)
+    params.require(:test).permit(:title, :level, :category_id)
   end
 
   def rescue_with_test_not_found

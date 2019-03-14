@@ -3,6 +3,11 @@ require 'digest/sha1'
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  
+  has_many :test_passages, dependent: :destroy
+  has_many :tests, through: :test_passages, dependent: :destroy
+  has_many :authors_tests, class_name: "Test"
+
   devise :database_authenticatable,
          :registerable,
          :recoverable,
@@ -10,14 +15,6 @@ class User < ApplicationRecord
          :validatable,
          :trackable,
          :confirmable
-
-  CORRECT_EMAIL_FORMAT = /@/
-  
-  has_many :test_passages, dependent: :destroy
-  has_many :tests, through: :test_passages, dependent: :destroy
-  has_many :authors_tests, class_name: "Test"
-
-  validates :email, format: CORRECT_EMAIL_FORMAT, uniqueness: true, presence: true
 
   def by_level(level)
     tests.where(level: level)
@@ -27,4 +24,7 @@ class User < ApplicationRecord
     test_passages.order(id: :desc).find_by(test: test)
   end
 
+  def admin?
+    type == 'Admin'
+  end
 end

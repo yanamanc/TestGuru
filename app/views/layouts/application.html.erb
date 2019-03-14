@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    <% if current_user.type == 'Admin' %>
+    <% if current_user&.admin? %>
       <%= render 'admin/nav' %>
     <% elsif user_signed_in? %>
       <p class = "nav user">Welcome, <b><%= current_user.email %></b>
