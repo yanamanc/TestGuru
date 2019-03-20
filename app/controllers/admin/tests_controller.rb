@@ -1,7 +1,6 @@
-class Admin::TestsController < ApplicationController
+class Admin::TestsController < Admin::BaseController
 
   before_action :find_test, only: %i[start destroy show edit update]
-  
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
   def index
@@ -21,8 +20,7 @@ class Admin::TestsController < ApplicationController
   end
 
   def create
-    @test = Test.new(test_params)
-    @test.author_id = current_user.id
+    @test = current_user.authors_tests.new(test_params)
     if @test.save
       redirect_to admin_tests_path
     else

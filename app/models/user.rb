@@ -6,7 +6,7 @@ class User < ApplicationRecord
   
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages, dependent: :destroy
-  has_many :authors_tests, class_name: "Test"
+  has_many :authors_tests, class_name: "Test", foreign_key: :author_id
 
   devise :database_authenticatable,
          :registerable,
@@ -25,6 +25,6 @@ class User < ApplicationRecord
   end
 
   def admin?
-    type == 'Admin'
+    is_a?(Admin)
   end
 end
