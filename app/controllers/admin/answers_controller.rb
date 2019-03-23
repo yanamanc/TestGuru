@@ -3,6 +3,10 @@ class Admin::AnswersController < Admin::BaseController
   before_action :find_question, only: %i[new create]
   before_action :set_answer, only: %i[show edit update destroy]
   
+  def new
+    @answer = @question.answers.new
+  end
+
   def create
     @answer = @question.answers.new(answer_params)
 
@@ -12,6 +16,10 @@ class Admin::AnswersController < Admin::BaseController
       render :new
     end
   end
+
+  def edit; end
+
+  def show; end
 
   def update
     if @answer.update(answer_params)

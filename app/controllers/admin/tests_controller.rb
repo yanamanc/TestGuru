@@ -11,6 +11,10 @@ class Admin::TestsController < Admin::BaseController
     @test = Test.new
   end
 
+  def show; end
+
+  def edit; end
+
   def update
     if @test.update(test_params)
       redirect_to admin_tetst_path

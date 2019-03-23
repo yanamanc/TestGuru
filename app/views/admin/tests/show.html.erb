@@ -2,6 +2,9 @@
 Test level:<%= @test.level %><br>
 
 Questions:<br>
+<p>
+  <%= link_to 'New question', new_admin_test_question_path(@test) %>
+</p>
 
 <table>
   <%= render partial: 'admin/questions/question', collection: @test.questions %>

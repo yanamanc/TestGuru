@@ -3,15 +3,23 @@ class Admin::QuestionsController < Admin::BaseController
   before_action :find_test, only: %i[new create]
   before_action :find_question, only: %i[show edit update destroy]
 
-def create
-  @question = @test.questions.new(question_params)
-
-  if @question.save
-    redirect_to admin_question_path(@question)
-  else
-    render :new
+  def new
+    @question = @test.questions.new
   end
-end
+
+  def create
+    @question = @test.questions.new(question_params)
+
+    if @question.save
+      redirect_to admin_question_path(@question)
+    else
+      render :new
+    end
+  end
+
+  def show; end
+
+  def edit; end
 
   def update
     if @question.update(question_params)
