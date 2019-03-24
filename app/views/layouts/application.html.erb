@@ -9,13 +9,16 @@
   </head>
 
   <body>
-    <% if logged_in? %>
+    <% if current_user&.admin? %>
+      <%= render 'admin/nav' %>
+    <% elsif user_signed_in? %>
       <p class = "nav user">Welcome, <b><%= current_user.email %></b>
       <%= link_to 'Guru', root_path %>
-      <%= link_to 'Exit', logout_path, method: :delete %></p>
+      <%= link_to 'Exit', destroy_user_session_path, method: :delete %></p>
     <% end %>
   </body>
-
+  
+  <%= render 'shared/flash' %>
   <%= yield %>
 
   <%= render 'layouts/footer' %>
