@@ -1,0 +1,62 @@
+ru:
+  tests:
+    index:
+      title: 'Название'
+      level: 'Уровень'
+      questions: 'Вопросов'
+      action: 'Действие'
+      tests: 'Тесты'
+    test:
+      start: 'Старт'
+
+  admin:
+    tests:
+      form:
+        title: 'Название'
+        level: 'Уровень'
+        category_id: 'Категория'
+        back: 'Назад'
+
+      test:
+        show: 'Просмотреть'
+        edit: 'Редактировать'
+        delete: 'Удалить'
+        confirm: 'Вы уверены?'
+
+      index:
+        tests: 'Тесты'
+        new_test: 'Новый тест'
+        title: 'Название'
+        level: 'Уровень'
+        questions: 'Вопросов'
+        action: 'Действие'
+
+      show:
+        test_title: 'Название теста: '
+        test_level: 'Уровень теста: '
+        questions: 'Вопросов'
+        new_question: 'Новый вопрос'
+        edit: 'Редактировать'
+        delete: 'Удалить'
+        confirm: 'Вы уверены?'
+        back: 'Назад'
+
+    .nav:
+      admin_panel: 'ТестГуру панель админа'
+      welcome: 'Приветствуем, '
+      guru: 'Гуру'
+      exit: 'Выход'
+
+
+  success: 'Успех'
+  create_test: 'Создать тест'
+  
+  activerecord:
+    errors:
+      models:
+        test:
+          attributes:
+            title:
+              blank: "не может быть пустым"
+            category:
+              required: "требуется"
