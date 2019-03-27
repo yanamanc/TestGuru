@@ -41,11 +41,14 @@ ru:
         confirm: 'Вы уверены?'
         back: 'Назад'
 
-    .nav:
+    nav:
       admin_panel: 'ТестГуру панель админа'
       welcome: 'Приветствуем, '
       guru: 'Гуру'
       exit: 'Выход'
+
+  select:
+    prompt: "Select"
 
 
   success: 'Успех'
@@ -60,3 +63,12 @@ ru:
               blank: "не может быть пустым"
             category:
               required: "требуется"
+
+  helpers:
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+
+    select:
+      prompt: "Выберите категорию"

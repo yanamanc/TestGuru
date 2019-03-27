@@ -13,7 +13,7 @@
 
   <p>
     <%= form.label t('.category_id') %>
-    <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
+    <%= form.collection_select :category_id,  Category.all, :id, :title %>
   </p>
   
   <p>

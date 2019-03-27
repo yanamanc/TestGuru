@@ -41,7 +41,7 @@ en:
         confirm: 'Are you sure?'
         back: 'Back'
 
-    .nav:
+    nav:
       admin_panel: 'TestGuru Admin Panel'
       welcome: 'Welcome, '
       guru: 'Guru'
@@ -49,3 +49,12 @@ en:
 
   success: 'Success'
   create_test: 'Create test'
+
+  helpers:
+    submit:
+      test:
+        create: "Create test"
+        update: "Update test"
+
+    select:
+      prompt: "Select category"
