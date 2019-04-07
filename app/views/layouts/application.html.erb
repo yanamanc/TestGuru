@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>TestGuru</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <% if current_user&.admin? %>
-      <%= render 'admin/nav' %>
-    <% elsif user_signed_in? %>
-      <p class = "nav user">Welcome, <b><%= current_user.email %></b>
-      <%= link_to 'Guru', root_path %>
-      <%= link_to 'Exit', destroy_user_session_path, method: :delete %></p>
+    <% if user_signed_in? %>
+      <nav class="navbar navbar-dark bg-primary">
+        <% if current_user&.admin? %>
+          <p class = "nav user navbar-brand justify-content-start">
+            <%= link_to t('.admin_panel'), admin_tests_path %>
+          </p>
+        <% end %>
+        <p class = "nav user navbar-brand justify-content-start">
+          <%= link_to 'Guru', root_path %>
+        </p>
+        <p class = "nav user navbar-brand justify-content-end">Welcome,<%= current_user.email %>
+          <%= link_to 'Exit', destroy_user_session_path, method: :delete %>
+        </p>
+      </nav>
     <% end %>
   </body>
   
