@@ -9,6 +9,10 @@ ru:
     test:
       start: 'Старт'
 
+  layouts:
+    application:
+      admin_panel: 'Панель админа'
+
   admin:
     tests:
       form:
@@ -40,12 +44,6 @@ ru:
         delete: 'Удалить'
         confirm: 'Вы уверены?'
         back: 'Назад'
-
-    nav:
-      admin_panel: 'ТестГуру панель админа'
-      welcome: 'Приветствуем, '
-      guru: 'Гуру'
-      exit: 'Выход'
 
   select:
     prompt: "Select"

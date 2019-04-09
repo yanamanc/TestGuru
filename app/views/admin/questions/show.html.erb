@@ -1,10 +1,22 @@
-<b>Question:</b>
-<p><%= @question.body %></p>
-<b>Answers:</b><br>
-<%= link_to 'New answer', new_admin_question_answer_path(@question) %>
-<ol>
-  <%= render partial: 'admin/answers/answer', collection: @question.answers %>
-</ol>
+<div class="row justify-content-center font-weight-bold">
+  Question:<%= @question.body %>
+</div>
 
-<%= link_to 'Edit', edit_admin_question_path(@question) %> | 
-<%= link_to 'Back', admin_test_path(@question.test) %>
+<div class="row justify-content-center font-weight-bold">
+  Answers:
+</div>
+
+<div class="row justify-content-center">
+  <%= link_to 'New answer', new_admin_question_answer_path(@question), class: 'nav-link' %>
+</div>
+
+<div class="row justify-content-center">
+  <ol>
+    <%= render partial: 'admin/answers/answer', collection: @question.answers %>
+  </ol>
+</div>
+
+<p class="row justify-content-center">
+  <%= link_to 'Edit', edit_admin_question_path(@question), class: 'nav-link' %> | 
+  <%= link_to 'Back', admin_test_path(@question.test), class: 'nav-link' %>
+</p>

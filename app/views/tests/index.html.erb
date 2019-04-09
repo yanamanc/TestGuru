@@ -1,14 +1,21 @@
-<h1>
-  <%= t('.tests') %>
-</h1>
+<div class="row justify-content-center">
+  <h1>
+    <%= t('.tests') %>
+  </h1>
+</div>
 
-<table>
-  <tr>
-    <th><%= t('.title') %></th>
-    <th><%= t('.level') %></th>
-    <th><%= t('.question') %></th>
-    <th><%= t('.action') %></th>
-  </tr>
+<div class="row col-md-6 offset-md-3 table-responsive-sm">
 
-  <%= render @tests %>
-</table>
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th><%= t('.title') %></th>
+        <th><%= t('.level') %></th>
+        <th><%= t('.question') %></th>
+        <th><%= t('.action') %></th>
+      </tr>
+    </thead>
+
+    <%= render @tests %>
+  </table>
+</div>

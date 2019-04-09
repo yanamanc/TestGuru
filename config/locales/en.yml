@@ -9,6 +9,10 @@ en:
     test:
       start: 'Start'
 
+  layouts:
+    application:
+      admin_panel: 'Admin Panel'
+
   admin:
     tests:
       form:
@@ -40,12 +44,6 @@ en:
         delete: 'Delete'
         confirm: 'Are you sure?'
         back: 'Back'
-
-    nav:
-      admin_panel: 'TestGuru Admin Panel'
-      welcome: 'Welcome, '
-      guru: 'Guru'
-      exit: 'Exit'
 
   success: 'Success'
   create_test: 'Create test'
