@@ -1,0 +1,18 @@
+
+<h1><%= t('.gist_list') %></h1>
+
+<table>
+    <tr>
+      <th><%= t('.question') %></th>
+      <th><%= t('.link') %></th>
+      <th><%= t('.user') %></th>
+    </tr>
+  <%= @gists.each do |gist| %>
+    <tr>
+      <td><%= link_to truncate(gist.question.body, length: 25), admin_question_path(gist.question) %></td>
+      <td><%= link_to gist.gist_link, "https://gist.github.com/#{gist.gist_link}" %></td>
+      <td><%= link_to truncate(gist.user.email) %></td>
+      <br>
+    </tr>
+  <% end %>
+</table>

@@ -13,6 +13,12 @@ ru:
     application:
       admin_panel: 'Панель админа'
 
+  test_passages:
+    gist:
+      success: 'Gist был успешно создан'
+      failure: 'Неудачная попытка'
+      gist_description: 'Тест -  %{test_title}'
+
   admin:
     tests:
       form:
@@ -44,6 +50,13 @@ ru:
         delete: 'Удалить'
         confirm: 'Вы уверены?'
         back: 'Назад'
+
+    gists:
+      index:
+        gist_list: 'Gist список'
+        question: 'Вопрос'
+        link: 'Ссылка'
+        user: 'Пользователь'
 
   select:
     prompt: "Select"

@@ -12,6 +12,12 @@ en:
   layouts:
     application:
       admin_panel: 'Admin Panel'
+      
+  test_passages:
+    gist:
+      success: 'Gist was successfuly created'
+      failure: 'Failure'
+      gist_description: 'Test -  %{test_title}'
 
   admin:
     tests:
@@ -44,6 +50,13 @@ en:
         delete: 'Delete'
         confirm: 'Are you sure?'
         back: 'Back'
+
+    gists:
+      index:
+        gist_list: 'Gist List'
+        question: 'Question'
+        link: 'Link'
+        user: 'User'
 
   success: 'Success'
   create_test: 'Create test'
