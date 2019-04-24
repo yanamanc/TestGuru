@@ -57,6 +57,7 @@ ru:
         question: 'Вопрос'
         link: 'Ссылка'
         user: 'Пользователь'
+        gist: 'Гист'
 
   select:
     prompt: "Select"

@@ -1,10 +1,10 @@
 class GistQuestionService
   attr_accessor :gist
 
-  def initialize(question)
+  def initialize(question, client: nil)
     @question = question
     @test = @question.test
-    @client = Octokit::Client.new(access_token: ENV['TOKEN'])
+    @client = client ? client : Octokit::Client.new(access_token: ENV['TOKEN'])
   end
 
   def call
@@ -24,5 +24,9 @@ class GistQuestionService
 
   def gist_content
     [@question.body, *@question.answers.pluck(:body)].join("\n")
+  end
+
+  def success?
+    @client.last_response.status == 201
   end
 end

@@ -57,6 +57,7 @@ en:
         question: 'Question'
         link: 'Link'
         user: 'User'
+        gist: 'Gist'
 
   success: 'Success'
   create_test: 'Create test'
