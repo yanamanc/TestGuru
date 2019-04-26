@@ -6,12 +6,19 @@ ru:
       questions: 'Вопросов'
       action: 'Действие'
       tests: 'Тесты'
+      gist: 'Гист'
     test:
       start: 'Старт'
 
   layouts:
     application:
       admin_panel: 'Панель админа'
+
+  test_passages:
+    gist:
+      success: 'Gist был успешно создан'
+      failure: 'Неудачная попытка'
+      gist_description: 'Тест -  %{test_title}'
 
   admin:
     tests:
@@ -44,6 +51,14 @@ ru:
         delete: 'Удалить'
         confirm: 'Вы уверены?'
         back: 'Назад'
+
+    gists:
+      index:
+        gist_list: 'Gist список'
+        question: 'Вопрос'
+        link: 'Ссылка'
+        user: 'Пользователь'
+        gist: 'Гист'
 
   select:
     prompt: "Select"

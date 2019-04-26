@@ -22,12 +22,15 @@
     <p>
       <%= form.submit 'Next', class:"btn btn-info" %>
     </p>
-  <% end %>
 </div>
 
 <div class="row justify-content-center">
   <p>
     <%= @test_passage.question_index %>/<%= @test_passage.test.questions.count %>
+    <%= link_to 'Gist Question', gist_test_passage_path(@test_passage), method: :post %>
+    <%= form.submit 'Next' %>
   </p>
+  
+  <% end %>
 </div>
 
