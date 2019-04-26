@@ -6,6 +6,7 @@ ru:
       questions: 'Вопросов'
       action: 'Действие'
       tests: 'Тесты'
+      gist: 'Гист'
     test:
       start: 'Старт'
 

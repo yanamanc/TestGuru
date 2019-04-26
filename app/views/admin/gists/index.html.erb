@@ -9,7 +9,7 @@
   <% @gists.each do |gist| %>
     <tr>
       <td><%= link_to truncate(gist.question.body, length: 25), admin_question_path(gist.question) %></td>
-      <td><%= link_to t('.gist'), gist.url %></td>
+      <td><%= link_to gist.url, gist.url %></td>
       <td><%= link_to truncate(gist.user.email) %></td>
       <br>
     </tr>

@@ -6,6 +6,7 @@ en:
       questions: 'Questions'
       action: 'Action'
       tests: 'Tests'
+      gist: 'Gist'
     test:
       start: 'Start'
 
