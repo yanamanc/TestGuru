@@ -10,21 +10,23 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <nav class="navbar navbar-dark bg-primary">
-        <% if current_user&.admin? %>
-          <p class = "nav user navbar-brand justify-content-start">
-            <%= link_to t('.admin_panel'), admin_tests_path %>
+    <header>
+      <% if user_signed_in? %>
+        <nav class="navbar navbar-dark">
+          <% if current_user&.admin? %>
+            <p class = "nav navbar-brand justify-content-start">
+              <%= link_to t('.admin_panel'), admin_tests_path %>
+            </p>
+          <% end %>
+          <p class = "nav navbar-brand justify-content-start">
+            <%= link_to 'Guru', root_path %>
           </p>
-        <% end %>
-        <p class = "nav user navbar-brand justify-content-start">
-          <%= link_to 'Guru', root_path %>
-        </p>
-        <p class = "nav user navbar-brand justify-content-end">Welcome,<%= current_user.email %>
-          <%= link_to 'Exit', destroy_user_session_path, method: :delete %>
-        </p>
-      </nav>
-    <% end %>
+          <p class = "nav navbar-brand justify-content-end">Welcome, <%= current_user.email %>
+            <%= link_to 'Exit', destroy_user_session_path, method: :delete %>
+          </p>
+        </nav>
+      <% end %>
+    </header>
   </body>
   
   <%= render 'shared/flash' %>
