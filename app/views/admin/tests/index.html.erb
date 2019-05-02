@@ -4,16 +4,20 @@
 
 <div class="row justify-content-center">
   <p>
-    <%= link_to t('.new_test'), new_admin_test_path %>
+    <%= link_to t('.new_test'), new_admin_test_path %><br>
     <%= link_to t('.gist'), admin_gists_index_path %>
   </p>
 </div>
 
-<div class="row col-md-6 offset-md-3 table-responsive-sm">
+<div class="row col-md-8 offset-md-2 table-responsive-sm">
   <table class="table table-striped">
     <thead class="thead-dark">
       <tr>
-        <th><%= t('.title') %></th>
+        <th class='sort-by-title pointer'>
+          <%= t('.title') %>
+          <%= octicon 'arrow-up', class: 'text-success hide' %>
+          <%= octicon 'arrow-down', class: 'text-success hide' %>
+        </th>
         <th><%= t('.level') %></th>
         <th><%= t('.questions') %></th>
         <th colspan="4"><%= t('.action') %></th>

@@ -3,7 +3,7 @@ ru:
     index:
       title: 'Название'
       level: 'Уровень'
-      questions: 'Вопросов'
+      question: 'Вопросов'
       action: 'Действие'
       tests: 'Тесты'
       gist: 'Гист'

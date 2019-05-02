@@ -21,6 +21,7 @@ gem 'letter_opener'
 gem 'faraday'
 gem "octokit", "~> 4.0"
 gem 'pry-rails'
+gem 'octicons_helper'
 
 group :development, :test do
   gem 'byebug', platform: :mri
