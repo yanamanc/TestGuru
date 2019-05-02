@@ -12,15 +12,18 @@ function checkPassword() {
     password_confirmation.style.backgroundColor = 'white';
   }
 
-  if(password.value == password_confirmation.value && password.value.length >= 6) {
+  else{
+    if(password.value == password_confirmation.value && password.value.length >= 6) {
     
     password_confirmation.style.backgroundColor = 'green';
-    message.style.color = 'green';
-  }
+      message.style.color = 'green';
+    }
 
-  if(password.value != password_confirmation.value && password.value.length >= 6) {
-    password_confirmation.style.backgroundColor = 'red';
-    message.style.color = 'red';
+    else {
+      password_confirmation.style.backgroundColor = 'red';
+      message.style.color = 'red';
+    }
   }
+    
 
 }
