@@ -27,6 +27,8 @@ ru:
         level: 'Уровень'
         category_id: 'Категория'
         back: 'Назад'
+      form_inline:
+        submit: 'OK'
 
       test:
         show: 'Просмотреть'

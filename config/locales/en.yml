@@ -27,6 +27,8 @@ en:
         level: 'Level'
         category_id: 'Category'
         back: 'Back'
+      form_inline:
+        submit: 'OK'
 
       test:
         show: 'Show'
