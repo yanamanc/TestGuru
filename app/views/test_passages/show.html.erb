@@ -17,10 +17,6 @@
 </div>
 
 <div class="row justify-content-center">
-    <p><%= form.submit 'Next', class:"btn btn-info" %></p>
-</div>
-
-<div class="row justify-content-center">
   <div class="progress">
     <%= content_tag :div,
                     class: 'progress-bar',
@@ -33,7 +29,7 @@
 <div class="row justify-content-center">
   <p>
     <%= link_to 'Gist Question', gist_test_passage_path(@test_passage), method: :post %><br>
-    <%= form.submit 'Next' %>
+    <%= form.submit 'Next', class:"btn btn-info" %>
   </p>
 </div>
 <% end %>

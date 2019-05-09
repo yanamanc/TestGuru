@@ -1,4 +1,6 @@
 class Test < ApplicationRecord
+  attr_accessor :min, :max
+
   belongs_to :category
   has_many :questions, dependent: :destroy
   has_many :test_passages, dependent: :destroy
@@ -16,5 +18,23 @@ class Test < ApplicationRecord
   
   def self.sort_by_categoryl(category_name)
     by_category(category_name).pluck(:title)
+  end
+
+  def questions_for_statistic
+    min = questions&.first&.gists&.size
+    max = min
+    qmin = questions&.first
+    qmax = qmin
+    questions.each do |question|
+      if question.gists&.size < min
+        min = question.gists&.size
+        qmin = question
+      end
+      if question.gists&.count.to_i > max
+        max = question.gists&.count.to_i
+        qmax = question
+      end
+    end
+    [qmin, qmax]
   end
 end
