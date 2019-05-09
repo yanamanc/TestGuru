@@ -24,6 +24,4 @@ function checkPassword() {
       message.style.color = 'red';
     }
   }
-    
-
 }

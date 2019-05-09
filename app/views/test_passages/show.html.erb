@@ -3,9 +3,7 @@
 </div>
 
 <div class="row justify-content-center">
-  <p  class="font-weight-bold">
-    <%= @test_passage.current_question.body %>
-  </p>
+  <%= @test_passage.current_question.body %>
 </div>
 
 <div class="row justify-content-center">
@@ -19,18 +17,25 @@
 </div>
 
 <div class="row justify-content-center">
-    <p>
-      <%= form.submit 'Next', class:"btn btn-info" %>
-    </p>
+    <p><%= form.submit 'Next', class:"btn btn-info" %></p>
+</div>
+
+<div class="row justify-content-center">
+  <div class="progress">
+    <%= content_tag :div,
+                    class: 'progress-bar',
+                    data: { current_question: @test_passage.question_index,
+                    all_questions: @test_passage.test.questions.count } do %>
+    <% end %>
+  </div>
 </div>
 
 <div class="row justify-content-center">
   <p>
-    <%= @test_passage.question_index %>/<%= @test_passage.test.questions.count %>
-    <%= link_to 'Gist Question', gist_test_passage_path(@test_passage), method: :post %>
+    <%= link_to 'Gist Question', gist_test_passage_path(@test_passage), method: :post %><br>
     <%= form.submit 'Next' %>
   </p>
-  
-  <% end %>
 </div>
+<% end %>
+
 
