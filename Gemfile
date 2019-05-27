@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'rails', '~> 5.1.4'
-gem 'sqlite3'
+gem 'pg'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -22,7 +22,6 @@ gem 'faraday'
 gem "octokit", "~> 4.0"
 gem 'pry-rails'
 gem 'octicons_helper'
-
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'dotenv-rails'

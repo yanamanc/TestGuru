@@ -16,7 +16,7 @@ class Admin::TestsController < Admin::BaseController
 
   def update
     if @test.update(test_params)
-      redirect_to admin_tetst_path, notice: t(:success)
+      redirect_to admin_test_path, notice: t(:success)
     else
       render :edit
     end

@@ -1,0 +1,18 @@
+<div class="row justify-content-center">
+  <h1>STATISTICS</h1>
+  <table class="table table-striped">
+    <tr>
+      <td><h2>Тест</h2></td>
+      <td><h2>Самый простой вопрос</h2></td>
+      <td><h2>Самый затруднительный вопрос</h2></td>
+    </tr>
+
+    <% @tests.each do |test| %>
+      <tr>
+        <th><%= test.title %></th>
+        <th><%= test.questions_for_statistic[0].body %></th>
+        <th><%= test.questions_for_statistic[1].body %></th>
+      </tr>
+    <% end %>
+  </table>
+</div>
