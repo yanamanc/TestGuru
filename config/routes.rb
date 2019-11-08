@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :rewards
   root 'tests#index'
 
   devise_for :users, path: :gurus
@@ -28,4 +29,5 @@ Rails.application.routes.draw do
 
   get 'pages/statistic'
   resources :feedbacks, only: %i[new create]
+  resources :rewards, only: %i[index show]
 end

@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Rewards</h1>
+
+<% current_user.rewards.each do |reward| %>
+  <%= reward.title %>
+  <%= image_tag(reward.url,  width: '5%')%>
+<% end %>
