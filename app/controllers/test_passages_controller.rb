@@ -23,13 +23,24 @@ class TestPassagesController < ApplicationController
     else
       flash[:success] = t('.failure', link: result.html_url)
     end
-    
     redirect_to @test_passage
+  end
+
+   def result
+    @test_passage.user.rewards << Reward.new(@test_passage) if valid?
   end
 
   private
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
+  end
+
+  def valid?
+    @test_passage.success? && !repeated?
+  end
+
+  def repeated?
+    @test_passage.user.rewards.find_by(test_id: @test_passage.test_id)
   end
 end
